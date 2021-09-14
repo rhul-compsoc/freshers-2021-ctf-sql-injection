@@ -7,9 +7,15 @@ services:
     volumes:
       - ./static:/code/static
       - ./views:/code/views
+      - ./autoexec.sql:/code/autoexec.sql
     environment:
-      - DATABASE_HOST=rethinkdb
-      - DATABASE_NAME=production
-
-volumes:
-  rethinkdb:
+      - DATABASE_HOST=postgres
+    ports:
+      - '80:8080'
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=mysecretpassword
+      - POSTGRES_USER=root
+      - POSTGRES_DB=compsoc

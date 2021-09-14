@@ -9,6 +9,7 @@ import { Client } from "pg";
     user: "root",
     password: "mysecretpassword",
     database: "compsoc",
+    host: process.env.DATABASE_HOST,
   });
   await adminClient.connect();
   const initQuery = fs.readFileSync(
@@ -41,6 +42,7 @@ import { Client } from "pg";
         user: "frontend",
         password: "computingsociety.co.uk",
         database: "compsoc",
+        host: process.env.DATABASE_HOST,
       });
 
       try {
