@@ -1,0 +1,22 @@
+{
+  "name": "please-do-not-sql-inject-us",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express-handlebars": "^5.3.1",
+    "@types/pg": "^8.6.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "pg": "^8.7.1",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.9.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/"
+  }
+}

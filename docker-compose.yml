@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./static:/code/static
+      - ./views:/code/views
+    environment:
+      - DATABASE_HOST=rethinkdb
+      - DATABASE_NAME=production
+
+volumes:
+  rethinkdb:
