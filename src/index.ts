@@ -49,7 +49,7 @@ import { Client } from "pg";
         await appClient.connect();
         const users = await appClient.query(`SELECT * FROM capturetheflag.users WHERE username = '${req.query.username}' AND password = '${req.query.password}';`)
 
-        if (users.rows && users.rows.length > 1) {
+        if (users.rows && users.rows.length >= 1) {
           res.render('loggedin');
         } else {
           res.render('login', { message: 'Incorrect username or password.' })
