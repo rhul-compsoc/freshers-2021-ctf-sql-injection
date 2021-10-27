@@ -3,7 +3,7 @@ CREATE SCHEMA capturetheflag;
 
 CREATE TABLE IF NOT EXISTS capturetheflag.users (
   username VARCHAR(255) PRIMARY KEY,
-  password VARCHAR(255)
+  password VARCHAR(255) NOT NULL
 );
 
 INSERT INTO capturetheflag.users VALUES ('davewhiteland', 'tapirosaurus');
